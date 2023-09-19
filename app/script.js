@@ -18,16 +18,20 @@ function addtodo(todo) {
 
   let checkbox = document.createElement("input");
   checkbox.type = "checkbox";
-  let para = document.createElement("label");
-  para.innerText = todo;
+  let li = document.createElement("label");
+  li.innerText = todo;
   div.appendChild(checkbox);
-  div.appendChild(para);
+  div.appendChild(li);
 
   checkbox.addEventListener("change", function () {
     if (checkbox.checked) {
-      para.style.textDecoration = "line-through";
+      const completed = document.getElementById("completed");
+      li.style.textDecoration = "line-through";
+      completed.appendChild(div);
     } else {
-      para.style.textDecoration = "";
+      const uncompleted = document.getElementById("List");
+      li.style.textDecoration = "";
+      uncompleted.appendChild(div);
     }
   });
   return div;
@@ -39,11 +43,11 @@ function clear() {
 
 function saveToLocalStorage() {
   const str = JSON.stringify(todos);
-  localStorage.setItem("todos-list", str);
+  localStorage.setItem("to-do-list", str);
 }
 
 function getFromLocalStorage() {
-  const str = localStorage.getItem("todos-list");
+  const str = localStorage.getItem("to-do-list");
   if (!str) {
     todos = [];
   } else {
@@ -62,5 +66,6 @@ function updateListUI() {
     List.appendChild(todo);
   }
 }
+
 getFromLocalStorage();
 updateListUI();

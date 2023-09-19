@@ -63,3 +63,7 @@ button:hover {
 #List p:hover {
   cursor: pointer;
 }
+#List {
+  margin-top: 5px;
+  border-bottom: solid darkgrey;
+}
