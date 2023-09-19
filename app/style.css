@@ -5,7 +5,7 @@ body {
   background: linear-gradient(135deg, lightpink, beige);
 }
 
-#wrapper h2 {
+#todo h2 {
   display: flex;
   justify-content: center;
 }
@@ -20,18 +20,18 @@ h2 {
   margin-top: 30px;
   height: 2.5em;
   width: 250px;
-  padding-left: 10px;
+  padding-left: 150px;
 }
 
 input:active {
   border: none;
 }
-#wrapper {
+#todo {
   height: 500px;
-  width: 400px;
+  width: 500px;
   margin: 200px auto;
   background-color: whitesmoke;
-  border-radius: 10px;
+  border-radius: 70px;
   padding: 30px;
 }
 
@@ -44,22 +44,22 @@ button {
   padding: 0 30px;
   letter-spacing: 1px;
   border: none;
-  color: #102770;
+  color: black;
 }
 
 button:hover {
   cursor: pointer;
 }
-#todoList {
+#List {
   color: black;
   font-size: 28px;
   margin-top: 10px;
 }
 
-#todoList p {
+#List p {
   margin: 10px 0px;
 }
 
-#todoList p:hover {
+#List p:hover {
   cursor: pointer;
 }

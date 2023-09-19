@@ -1,5 +1,5 @@
 let button = document.querySelector("#add");
-let todoList = document.querySelector("#todoList");
+let List = document.querySelector("#List");
 let input = document.querySelector("#input");
 
 let todos = [];
@@ -7,9 +7,10 @@ let todos = [];
 button.addEventListener("click", () => {
   todos.push(input.value);
   saveToLocalStorage();
-
-
+  updateListUI();
+  console.log("yes");
   addtodo(input.value);
+  clear();
 });
 
 function addtodo(todo) {
@@ -31,6 +32,11 @@ function addtodo(todo) {
   });
   return div;
 }
+function clear() {
+  let input = document.getElementById("input");
+  input.value = "";
+}
+
 function saveToLocalStorage() {
   const str = JSON.stringify(todos);
   localStorage.setItem("todos-list", str);
@@ -43,13 +49,18 @@ function getFromLocalStorage() {
   } else {
     todos = JSON.parse(str);
   }
-  updatetodoListUI();
 }
-function updatetodoListUI() {
+function clearApp() {
+  const app = document.querySelector("#List");
+  app.innerHTML = "";
+}
+
+function updateListUI() {
+  clearApp();
   for (let i = 0; i < todos.length; i++) {
     const todo = addtodo(todos[i]);
-
-    todoList.appendChild(todo);
+    List.appendChild(todo);
   }
 }
 getFromLocalStorage();
+updateListUI();
