@@ -1,41 +1,56 @@
-html,
+* {
+  margin: 0;
+  padding: 0;
+}
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, beige, lightpink);
+}
+.container {
+  padding: 30px;
+  margin: 250px auto;
+  width: 400px;
   background: linear-gradient(135deg, lightpink, beige);
+  box-shadow: 0 0 5px rgb(0, 0, 0, 0.3);
 }
-
-#todo h2 {
-  display: flex;
-  justify-content: center;
+h1 {
+  padding: 10px;
+  text-align: center;
 }
-
-h2 {
-  color: black;
-  letter-spacing: 1px;
+input[type="text"] {
+  width: 65%;
+  padding: 5px;
+  margin: 10px;
+  font-size: 18px;
 }
-#input {
-  border-radius: 5px;
-  border: 2px solid black;
-  margin-top: 30px;
-  height: 2.5em;
-  width: 250px;
-  padding-left: 150px;
+input[type="submit"] {
+  padding: 8px;
+  font-size: 14px;
+  background-color: lightgrey;
+  border: 0;
+  border-radius: 15px;
 }
-
-input:active {
-  border: none;
-}
-#todo {
-  height: 500px;
-  width: 500px;
-  margin: 200px auto;
-  background-color: whitesmoke;
-  border-radius: 70px;
+.app {
   padding: 30px;
 }
-
-button {
+.unchecked-task li {
+  padding: 10px;
+  list-style: none;
+  display: flex;
+}
+.unchecked-task li p {
+  padding-left: 5px;
+}
+.checked-task li {
+  padding: 10px;
+  list-style: none;
+  display: flex;
+}
+.checked-task li p {
+  padding-left: 5px;
+}
+#Add {
   margin-top: 20px;
   background-color: lightgrey;
   border-radius: 4px;
@@ -45,25 +60,4 @@ button {
   letter-spacing: 1px;
   border: none;
   color: black;
-}
-
-button:hover {
-  cursor: pointer;
-}
-#List {
-  color: black;
-  font-size: 28px;
-  margin-top: 10px;
-}
-
-#List p {
-  margin: 10px 0px;
-}
-
-#List p:hover {
-  cursor: pointer;
-}
-#List {
-  margin-top: 5px;
-  border-bottom: solid darkgrey;
 }
